@@ -1,0 +1,43 @@
+/* EventCard.css */
+.event-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 300px; /* Adjust as needed */
+  }
+  
+  .event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .event-card.ongoing {
+    border-color: green;
+  }
+  
+  .event-card.upcoming {
+    border-color: blue;
+  }
+  
+  .event-status {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .event-status.ongoing {
+    background-color: green;
+  }
+  
+  .event-status.upcoming {
+    background-color: blue;
+  }
+  

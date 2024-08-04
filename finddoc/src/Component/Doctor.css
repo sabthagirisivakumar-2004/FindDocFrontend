@@ -1,0 +1,8 @@
+.Dcard{
+    background-color: rgb(255, 255, 255);
+    
+}
+.Dcontainer{
+    display: inline-flex;
+    gap: 20px;
+}

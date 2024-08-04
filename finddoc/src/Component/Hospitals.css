@@ -1,0 +1,8 @@
+.Hcard{
+    background-color: rgb(255, 255, 255);
+    
+}
+.Hcontainer{
+    display: inline-flex;
+    gap: 20px;
+}
