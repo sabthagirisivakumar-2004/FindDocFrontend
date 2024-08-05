@@ -12,6 +12,7 @@ import LandingPage from "../Pages/Welcome/Landingpage/LandingPage";
 import Dprofile from "../Component/Doctorprofile";
 import Special from "../Pages/Welcome/Special";
 import Dpage from "../Pages/Welcome/DoctorPage";
+import Hdetails from "../Pages/Welcome/HospitalDetails"
 const Navigation = () => {
   return (
     <BrowserRouter>
@@ -27,6 +28,7 @@ const Navigation = () => {
         <Route path="/Doctorprofile" element={<Dprofile />}></Route>
         <Route path="/Special" element={<Special />}></Route>
         <Route path="/special/:id" element={<Dpage />}></Route>
+        <Route path="/Hdetails/:id" element={<Hdetails />}></Route>
       </Routes>
     </BrowserRouter>
   );
