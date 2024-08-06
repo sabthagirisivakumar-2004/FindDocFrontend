@@ -10,18 +10,20 @@ function BasicExample({ item }) {
           marginTop: "10px",
           marginLeft: "55px",
           backgroundColor: "",
-          borderColor: "black",
-          borderStyle: "solid",
+          
+          
           borderRadius: "10px",
+          boxShadow:"0 4px 8px 3px rgba(0, 0, 0, 0.2)",
+    borderRadius: "20px",
         }}
         className="Dcard"
       >
         <Card.Img
           variant="top"
           src={item.url}
-          width={"286px"}
+          width={"288px"}
           height={"180px"}
-          style={{ borderRadius: "10px" }}
+          style={{ borderStartEndRadius:"20px",borderTopLeftRadius:"20px"}}
         />
         <Card.Body>
           <Card.Title style={{ paddingLeft: "10px" }}>

@@ -4,27 +4,27 @@ const imageObjects = [
   {
     id: 1,
     name: "Figma",
-    src: "https://graph.org/file/a162a5d037162a7828e86.jpg",
+    src: "https://telegra.ph/file/30ba533d4c9a0668f4ec8.jpg",
   },
   {
     id: 2,
     name: "Image 2",
-    src: "https://graph.org/file/ffc11b377aacf7de3de63.jpg",
+    src: "https://telegra.ph/file/c85c27d771e7b760c150c.jpg",
   },
   {
     id: 3,
     name: "Image 3",
-    src: "https://graph.org/file/bdd751aa6059b70f82e62.jpg",
+    src: "https://telegra.ph/file/1c9beee9181d6d4f74d68.jpg",
   },
   {
     id: 4,
     name: "Image 4",
-    src: "https://graph.org/file/9b10e4a6973f437a8573e.jpg",
+    src: "https://telegra.ph/file/79d0dbd7ebd609b8f1255.jpg",
   },
   {
     id: 5,
     name: "Image 5",
-    src: "https://graph.org/file/d8dab52a8673a2f95ee4a.jpg",
+    src: "https://telegra.ph/file/be7217ba861f66e5a3432.jpg",
   },
 ];
 
@@ -72,7 +72,7 @@ const App = () => {
       <div
         className="scroll-container"
         ref={scrollContainerRef}
-        style={{ marginTop: "220px", height: "140px", borderColor:"white" }}
+        style={{ marginTop: "220px", height: "140px", borderColor: "white" }}
       >
         {items.map((item) => (
           <div

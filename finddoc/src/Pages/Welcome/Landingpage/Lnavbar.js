@@ -7,10 +7,11 @@ const Navbar = () => {
  
   return (
     <nav className="navbar">
-      <div className="logo">
+      <div className="logo" >
         <img
           src="https://graph.org/file/8998a48e103ccf565ec2b.jpg"
           alt="Hospital Logo"
+          
         />
       </div>
 
@@ -59,7 +60,7 @@ const Navbar = () => {
         </li>
         <li>
           <img
-            src="https://graph.org/file/013ab34a2d54cf6c62955.jpg"
+            src="https://telegra.ph/file/8234a14fe801e437971cd.jpg"
             width={"50px"}
             height={"50px"}
             style={{ borderRadius: "80px" }}

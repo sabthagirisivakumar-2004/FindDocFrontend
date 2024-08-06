@@ -12,7 +12,7 @@ const UserAuth = ({ setIsAuthenticated }) => {
     setIsRegister(!isRegister);
     setForm({ name: "", email: "", password: "" });
     setErrors({ name: "", email: "", password: "" });
-    navigate("/Signup");
+    navigate("/home");
   };
 
   const handleChange = (e) => {
@@ -56,7 +56,7 @@ const UserAuth = ({ setIsAuthenticated }) => {
         console.log("Login successful", form);
         localStorage.setItem("isAuthenticated", "true"); // Save authentication state
        
-        navigate("/home"); // Navigate to the home page upon successful login
+        navigate("/User-login"); // Navigate to the home page upon successful login
       }
     }
   };
@@ -67,24 +67,10 @@ const UserAuth = ({ setIsAuthenticated }) => {
       <div className="form-section">
         <form onSubmit={handleSubmit} className="form-container">
           <h1 style={{ textAlign: "center" }}>
-            Login
+            Signup
           </h1>
-          {isRegister && (
-            <div>
-              <label className="form-label">
-                Name:
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                />
-              </label>
-              {errors.name && <p className="form-error">{errors.name}</p>}
-            </div>
-          )}
+         
+          
           <div>
             <label className="form-label">
               Email:
@@ -114,12 +100,10 @@ const UserAuth = ({ setIsAuthenticated }) => {
             {errors.password && <p className="form-error">{errors.password}</p>}
           </div>
           <button type="submit" className="form-button">
-            {isRegister ? "Register" : "Login"}
+            Signup
           </button>
-          <button type="button" onClick={toggleMode} className="toggle-button">
-            {isRegister
-              ? "Already have an account? Login"
-              : "Don't have an account? Register"}
+          <button type="button" onClick={()=>{navigate("/User-login")}} className="toggle-button">
+          Already have an account? Login
           </button>
         </form>
       </div>

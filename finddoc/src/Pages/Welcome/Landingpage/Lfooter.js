@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
-import "./Footer.css";
+import "./Lfooter.css";
 const logoStyle = {
   width: '140px',
   height: 'auto',
@@ -30,7 +30,7 @@ function Copyright() {
 export default function Footer() {
   return (
     <>
-    <div className='footer'>
+    <div className='Lfooter'>
     <Container
       sx={{
         display: 'flex',
@@ -81,7 +81,7 @@ export default function Footer() {
                   'aria-label': 'Enter your email address',
                 }}
               />
-              <button className='Footerbtn'>Subscribe</button>
+              <button className='btncolor'>Subscribe</button>
             </Stack>
           </Box>
         </Box>

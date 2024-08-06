@@ -13,6 +13,8 @@ import Dprofile from "../Component/Doctorprofile";
 import Special from "../Pages/Welcome/Special";
 import Dpage from "../Pages/Welcome/DoctorPage";
 import Hdetails from "../Pages/Welcome/HospitalDetails"
+import Signup from "../Pages/Welcome/UserSignup"
+
 const Navigation = () => {
   return (
     <BrowserRouter>
@@ -29,6 +31,8 @@ const Navigation = () => {
         <Route path="/Special" element={<Special />}></Route>
         <Route path="/special/:id" element={<Dpage />}></Route>
         <Route path="/Hdetails/:id" element={<Hdetails />}></Route>
+        <Route path="/Signup"  element={<Signup/>}></Route>
+        
       </Routes>
     </BrowserRouter>
   );

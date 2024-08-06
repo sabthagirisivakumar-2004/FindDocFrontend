@@ -27,6 +27,7 @@ const Navbar = () => {
             onClick={() => {
               navigate("/home");
             }}
+            style={{marginLeft:"90px"}}
           >
             Home
           </a>
@@ -38,6 +39,7 @@ const Navbar = () => {
             onClick={() => {
               navigate("/Hsearch");
             }}
+            style={{marginLeft:"105px"}}
           >
             Hospital
           </a>
@@ -49,6 +51,7 @@ const Navbar = () => {
             onClick={() => {
               navigate("/Dsearch");
             }}
+            style={{marginLeft:"125px"}}
           >
             Doctors
           </a>
@@ -60,6 +63,7 @@ const Navbar = () => {
             onClick={() => {
               navigate("/Special");
             }}
+            style={{marginLeft:"140px"}}
           >
             Specialist
           </a>
@@ -69,6 +73,7 @@ const Navbar = () => {
             href="#events"
             className="links5"
             onClick={()=>{navigate("/events")}}
+            style={{marginLeft:"160px"}}
           >
             Events
           </a>
@@ -84,6 +89,7 @@ const Navbar = () => {
             width={"50px"}
             height={"50px"}
             style={{ borderRadius: "80px" }}
+            
           ></img>
         </li>
       </ul>
