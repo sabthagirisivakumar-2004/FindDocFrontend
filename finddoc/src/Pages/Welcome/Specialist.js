@@ -62,7 +62,7 @@ const SpecialistPage = () => {
     <>
      <NavBar/>
     <div className="specialist-page">
-      <div className="specialty-cards">
+      <div className="specialty-cards" >
         {specialties.map((specialty) => (
           <SpecialistCard
             key={specialty.name}

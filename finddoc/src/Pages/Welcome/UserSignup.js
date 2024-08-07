@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import "./UserLogin.css";
 
 const UserAuth = ({ setIsAuthenticated }) => {
   const [isRegister, setIsRegister] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({  email: "", password: "" });
   const [errors, setErrors] = useState({ name: "", email: "", password: "" });
   const navigate = useNavigate();
 
   const toggleMode = () => {
     setIsRegister(!isRegister);
-    setForm({ name: "", email: "", password: "" });
+    setForm({ email: "", password: "" });
     setErrors({ name: "", email: "", password: "" });
     navigate("/home");
   };
@@ -49,7 +50,7 @@ const UserAuth = ({ setIsAuthenticated }) => {
         // Handle registration logic
         console.log("Registration successful", form);
         // Switch to login after successful registration
-        setForm({ name: "", email: "", password: "" });
+        setForm({ email: "", password: "" });
         setErrors({ name: "", email: "", password: "" });
       } else {
         // Handle login logic
@@ -60,7 +61,11 @@ const UserAuth = ({ setIsAuthenticated }) => {
       }
     }
   };
-
+const nextSignin = async () =>{
+const datas={email:form.email,password:form.password}
+ const response = await axios.post('http://localhost:8080/saveUser',datas);
+ console.log(response.data)
+}
   return (
     <div className="container" style={{width:"1519px"}}>
       <div className="image-section"></div>
@@ -99,7 +104,7 @@ const UserAuth = ({ setIsAuthenticated }) => {
             </label>
             {errors.password && <p className="form-error">{errors.password}</p>}
           </div>
-          <button type="submit" className="form-button">
+          <button type="submit" className="form-button" onClick={nextSignin}>
             Signup
           </button>
           <button type="button" onClick={()=>{navigate("/User-login")}} className="toggle-button">

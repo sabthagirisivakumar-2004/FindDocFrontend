@@ -42,7 +42,7 @@ const Doctors = () => {
           placeholder="Search doctors..."
           className="search-input"
         />
-        <button className="search-button">Search</button>
+        <button className="search-button" onClick={handleSearchChange}>Search</button>
       </div>
       <div className="doctor-cards-container">
         {filteredDoctors.map((doctor, index) => (

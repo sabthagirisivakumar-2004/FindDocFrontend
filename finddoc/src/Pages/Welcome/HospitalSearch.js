@@ -61,6 +61,7 @@ const Hospital = () => {
           placeholder="Search hospitals..."
           className="search-input"
         />
+        <button className="HSbtn" onClick={handleSearchChange}>CLEAR</button>
       </div>
       <div className="hospital-cards-container">
         {filteredHospitals.map((hospital) => (

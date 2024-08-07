@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./UserLogin.css";
+import axios from "axios";
 
 const UserAuth = ({ setIsAuthenticated }) => {
   const [isRegister, setIsRegister] = useState(false);
@@ -52,22 +53,50 @@ const UserAuth = ({ setIsAuthenticated }) => {
         setForm({ name: "", email: "", password: "" });
         setErrors({ name: "", email: "", password: "" });
       } else {
-        // Handle login logic
-        console.log("Login successful", form);
-        localStorage.setItem("isAuthenticated", "true"); // Save authentication state
+        authentication();
        
-        navigate("/home"); // Navigate to the home page upon successful login
       }
     }
   };
 
+  const authentication = async () => {
+    try {
+      const response = await axios.post("http://localhost:8080/login", {
+        email: form.email,
+        password: form.password,
+      });
+  
+      if (response.status === 200) {
+        alert("Login successful");
+        navigate("/home");
+       
+        
+      } else {
+        alert("Login failed");
+      }
+    } catch (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        alert("Login failed: " +  "Invalid credentials");
+      } else if (error.request) {
+        // The request was made but no response was received
+        alert("No response from the server. Please try again later.");
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        alert("Error: " + error.message);
+      }
+    }
+  };
+  
+
   return (
-    <div className="container" style={{width:"1519px"}}>
+    <div className="container" style={{ width: "1519px" }}>
       <div className="image-section"></div>
       <div className="form-section">
-        <form onSubmit={handleSubmit} className="form-container">
+        <form className="form-container" onSubmit={handleSubmit}>
           <h1 style={{ textAlign: "center" }}>
-            Login
+            {isRegister ? "Register" : "Login"}
           </h1>
           {isRegister && (
             <div>
