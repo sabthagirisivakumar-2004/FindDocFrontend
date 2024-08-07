@@ -1,88 +1,72 @@
-import React, { useState, useEffect } from "react";
-import EventCard from "../../Component/EventCard";
-import EventSlideshow from "./EventSlideshow";
-import NewsSlideshow from "../../Component/NewsCard";
-import Nav from "../Welcome/Navbar";
-import "./Events.css";
-const Events = () => {
-  const [events, setEvents] = useState([]);
-  const [news, setNews] = useState([]);
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import NavBar from './Navbar'; // Adjust the import path as necessary
+import "./Events.css"
+import NewsCard from '../../Component/NewsCard';
+import AboutUs from './AboutUs';
 
-  useEffect(() => {
-    const dummyEvents = [
-      {
-        title: "Blood Donation Camp",
-        date: "2024-08-01",
-        location: "Community Center",
-        description: "Join us for a blood donation camp and save lives!",
-        image: "https://graph.org/file/72ecdd7fbc5feebdf6152.jpg", // Add image path
-      },
-      {
-        title: "Health Checkup Camp",
-        date: "2024-07-20",
-        location: "City Hospital",
-        description: "Free health checkups available for all.",
-        image: "https://graph.org/file/553de9055c9498676166c.jpg", // Add image path
-      },
-      {
-        title: "Vaccination Drive",
-        date: "2024-07-29",
-        location: "Town Hall",
-        description: "Get vaccinated for free.",
-        image: "https://graph.org/file/b0e894be7bf70ef6a53e8.jpg", // Add image path
-      },
-      // Add more events here
-    ];
+const EventPage = () => {
+  const events = [
+    {
+      image: 'https://graph.org/file/b0e894be7bf70ef6a53e8.jpg',
+      title: 'Tamil Nadu International Kite Festival',
+      date: '15-18 Aug 2024',
+      description: 'Show kites, music, kids carnival, food, shopping.',
+      location: 'Thiruvadanthai Beach, ECR',
+      link: '#',
+    },
+    {
+      image: 'https://graph.org/file/b0e894be7bf70ef6a53e8.jpg',
+      title: 'DARK - A Stand Up Comedy Special',
+      date: '2 Aug 2024',
+      description: 'By Aakash Mehta and Prakash Mehta',
+      link: '#',
+    },
+    {
+      image: 'https://graph.org/file/b0e894be7bf70ef6a53e8.jpg',
+      title: 'Retire Early Master Class',
+      date: 'Every Sunday till September | 4PM - 6PM',
+      description: 'With Sharan Hegde',
+      discount: '10% OFF',
+      link: '#',
+    },
+  ];
 
-    const dummyNews = [
-      {
-        title: "New Health Initiative Launched",
-        date: "2024-07-20",
-        content:
-          "A new health initiative has been launched to improve community health.",
-      },
-      {
-        title: "COVID-19 Vaccination Drive",
-        date: "2024-07-25",
-        content:
-          "A mass COVID-19 vaccination drive will take place this weekend.",
-      },
-      // Add more news items here
-    ];
-
-    setEvents(dummyEvents);
-    setNews(dummyNews);
-  }, []);
-
-  const ongoingEvents = events.filter(
-    (event) => new Date(event.date) <= new Date()
-  );
-  const upcomingEvents = events.filter(
-    (event) => new Date(event.date) > new Date()
-  );
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
-    <>
-      <Nav />
-      <div className="events-page">
-        <EventSlideshow events={ongoingEvents} />
-        <h1>Ongoing Medical Events</h1>
-        <div className="events-list">
-          {ongoingEvents.map((event, index) => (
-            <EventCard key={index} event={event} />
+    <div>
+      <NavBar />
+      <div className="event-page">
+      <Slider {...settings}>
+      {events.map((event, index) => (
+            <div key={index} className="event-slide">
+            <img src={event.image} alt={event.title} />
+            <div className="event-details">
+            <h2>{event.title}</h2>
+            <p>{event.date}</p>
+            <p>{event.description}</p>
+                {event.discount && <p>{event.discount}</p>}
+                <a href={event.link} className="book-now">
+                  Book Now
+                  </a>
+              </div>
+              </div>
           ))}
-        </div>
-        <h1>Upcoming Medical Events</h1>
-        <div className="events-list">
-          {upcomingEvents.map((event, index) => (
-            <EventCard key={index} event={event} />
-          ))}
-        </div>
-        <h1>Medical News</h1>
-        <NewsSlideshow newsItems={news} />
-      </div>
-    </>
-  );
+          </Slider>
+          </div>
+          <NewsCard />
+          <AboutUs />
+          </div>
+        );
 };
 
-export default Events;
+export default EventPage;

@@ -1,7 +1,8 @@
 import React from "react";
 import "./Navbar.css";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Profile  from "./Profile";
 const Navbar = () => {
   const navigate = useNavigate();
   const Hospitals = () => {
@@ -10,7 +11,17 @@ const Navbar = () => {
   const Doctors = () => {
     navigate("/Dsearch");
   };
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+  const handleProfileClick = () => {
+    setIsProfileOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setIsProfileOpen(false);
+  };
   return (
+    <>
     <nav className="navbar">
       <div className="logo">
         <img
@@ -84,16 +95,16 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <img
-            src="https://graph.org/file/013ab34a2d54cf6c62955.jpg"
-            width={"50px"}
-            height={"50px"}
-            style={{ borderRadius: "80px" }}
-            
-          ></img>
+        <img
+        src="https://graph.org/file/013ab34a2d54cf6c62955.jpg"
+        style={{ width: 30, height: 30, cursor: 'pointer' }}
+        alt="Profile"
+        onClick={handleProfileClick}
+      />
         </li>
       </ul>
     </nav>
+    <Profile open={isProfileOpen} onClose={handleDrawerClose} /></>
   );
 };
 
