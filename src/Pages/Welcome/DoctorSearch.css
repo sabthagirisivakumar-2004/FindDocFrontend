@@ -1,0 +1,99 @@
+/**
+ * Styles for a hospital card component.
+ *
+ * @example
+ * <div class="hospital-card">
+ *   <img class="hospital-image" src="hospital-image.jpg" alt="Hospital Image">
+ *   <div class="hospital-info">
+ *     <h2>Hospital Name</h2>
+ *     <p>Hospital Description</p>
+ *   </div>
+ * </div>
+ */
+ .hospital-card {
+  /**
+   * Border and radius styles for the hospital card.
+   */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/**
+ * Hover styles for the hospital card.
+ */
+.hospital-card:hover {
+  transform: scale(1.05);
+}
+
+/**
+ * Styles for the hospital image.
+ */
+.hospital-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/**
+ * Styles for the hospital information section.
+ */
+.hospital-info {
+  padding: 16px;
+}
+
+/**
+ * Styles for the hospital name heading.
+ */
+.hospital-info h2 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}
+
+/**
+ * Styles for the hospital description paragraph.
+ */
+.hospital-info p {
+  margin: 0;
+  color: #555;
+}
+
+/**
+ * Styles for the doctors container.
+ */
+.doctors-container {
+  margin-top: 80px;
+}
+
+/**
+ * Styles for the search button.
+ */
+.search-button {
+  width: 120px;
+  height: 45px;
+  background-color: rgb(148, 51, 238);
+  color: aliceblue;
+  border-color: rgb(148, 60, 231);
+  border-radius: 5px;
+  margin-left: 10px;
+  font-weight: 100;
+  font-size: 19px;
+}
+
+/**
+ * Styles for the doctor cards container.
+ */
+.doctor-cards-container {
+  display: grid;
+  grid-template-columns: 230px 230px 230px 230px;
+  margin-left: -20px;
+  max-width: 1500px;
+  align-items: center;
+  gap: 120px;
+  margin-top: 60px;
+}

@@ -1,0 +1,23 @@
+.main-footer {
+    color: white;
+    background-color: #dc3545;
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  .Footerbtn{
+    width: 150px;
+    background-color: rgb(148, 51, 238);
+    border-color: rgb(148, 51, 238);
+    color: aliceblue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-weight:lighter;
+    letter-spacing: 3px;
+    border-radius: 8px;
+ }
+.footer{
+    border-color: black;
+    border-style: solid;
+  margin-top: 150px;
+}

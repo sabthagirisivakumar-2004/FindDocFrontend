@@ -1,0 +1,42 @@
+.scroll-container {
+  display: flex;
+  overflow: hidden; /* Hide the scrollbar */
+  white-space: nowrap;
+  padding: 10px;
+  border: 1px solid #ccc;
+  height: 200px; /* Adjust as needed */
+}
+
+.item {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.item-image {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.Tools {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 1645px;
+  left: 640px;
+}
+
+.dot3 {
+  border-style: none;
+  border-top: dotted;
+  width: 9%;
+  border-width: 5px;
+  border-color: snow;
+  position: absolute;
+  top: 2845px;
+  left: 680px;
+}

@@ -1,0 +1,8 @@
+.ourdoctors{
+    display: grid;
+    grid-template-columns:310px 310px 310px;
+    max-width: 1000px;
+    place-items: center;
+    margin: 0 285px;
+
+}
