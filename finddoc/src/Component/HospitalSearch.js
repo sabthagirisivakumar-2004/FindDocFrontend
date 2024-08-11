@@ -1,15 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import "./Hospitals.css";
-import { Link, useNavigate } from "react-router-dom";
+import "./HospitalSearch.css";
+import { Link } from "react-router-dom";
 function BasicExample({ item }) {
-  const navigate = useNavigate();
-  const Hdetails = () => {
-  navigate(`/hospital/${item.id}`);
-  }
   return (
-    
-      <div className="Hcontainer" onClick={Hdetails()}>
+    <Link to={`/Hdetails/${item.id}`}>
+      <div className="Hcontainer">
         <Card
           style={{
             width: "18rem",
@@ -40,7 +36,7 @@ function BasicExample({ item }) {
           </Card.Body>
         </Card>
       </div>
-   
+    </Link>
   );
 }
 

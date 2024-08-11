@@ -181,7 +181,7 @@
     display: flex;
     gap: 10px;
     padding: 10px;
-    padding-left: 100px;
+    padding-left: 190px;
   }
   
   .hosp-detail h1 {
@@ -248,7 +248,7 @@
   .Hlocation{
     position: absolute;
     top:275px;
-    left: 300px;
+    left: 380px;
     
   }
   .Hdesc{

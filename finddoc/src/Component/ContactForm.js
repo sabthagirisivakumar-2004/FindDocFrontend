@@ -51,7 +51,7 @@ const ContactForm = ({ name }) => {
         <div className="contact_fild CLDGen_PrimaryFORM_Submit">
           <form className="contactForm" onSubmit={handleSubmit}>
             <div className="formIDfid">
-              <div className="contact-fild-box">
+              <div className="contact-fild-box" style={{marginLeft:"45px"}}>
                 <div className="form-group">
                   <input
                     className="form-control"
@@ -64,7 +64,7 @@ const ContactForm = ({ name }) => {
                   />
                 </div>
               </div>
-              <div className="contact-fild-box">
+              <div className="contact-fild-box" style={{marginLeft:"45px"}}>
                 <div className="form-group">
                   <input
                     className="form-control"
@@ -77,7 +77,7 @@ const ContactForm = ({ name }) => {
                   />
                 </div>
               </div>
-              <div className="contact-fild-box">
+              <div className="contact-fild-box" style={{marginLeft:"45px"}}>
                 <div className="form-group">
                   <input
                     className="form-control"

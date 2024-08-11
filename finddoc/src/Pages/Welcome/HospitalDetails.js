@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DoctorProfile from "../../Component/doctorpro";
 import "./HospitalDetails.css";
 import ContactForm from "../../Component/ContactForm";
 import NavBar from "../Welcome/Navbar";
+import axios from "axios";
 const hospitalsData = [
   {
     id: 1,
@@ -189,9 +190,19 @@ const hospitalsData = [
 
 const HospitalDetail = () => {
   const { id } = useParams();
+  const [HospitalDetail,setHospitalDetail]=useState([]);
+  useEffect(() => {
+    const fetch = async () =>{
+      const reponse= await axios.get(`http://localhost:8080/HospitalById/${id}`);
+      console.log(reponse.data);
+      setHospitalDetail(reponse.data);
+    }
+fetch();
+  }, [id])
+  
   const hospital = hospitalsData.find(
     (hospital) => hospital.id === parseInt(id)
-  );
+  );  
   const [searchTerm] = useState("");
   if (!hospital) {
     return <div>Hospital not found</div>;
@@ -210,14 +221,14 @@ const HospitalDetail = () => {
       <div className="hospital-detail-container">
         <div className="hospital-about">
           <img
-            src={hospital.image}
+            src={HospitalDetail.image}
             alt="error"
             className="hospital-image"
             style={{ filter: "brightness(50%)" }}
           />
           <div className="hosp-head">
             <div className="hosp-detail">
-              <h1>{hospital.name}</h1>
+              <h1>{HospitalDetail.name}</h1>
               <div className="location">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +241,7 @@ const HospitalDetail = () => {
                   <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
                   <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                 </svg>
-                <p className="Hlocation">{hospital.address}</p>
+                <p className="Hlocation">{HospitalDetail.address}</p>
               </div>
               <div className="phone">
                 <a className="phone-link" href="tel:+916383262389">
@@ -247,32 +258,32 @@ const HospitalDetail = () => {
                       d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
                     />
                   </svg>
-                  <p>+917969126494</p>
+                  <p>{HospitalDetail.phone}</p>
                 </a>
               </div>
             </div>
             <div className="contact-form">
-              <ContactForm name={hospital.name} />
+              <ContactForm name={HospitalDetail.name} />
             </div>
           </div>
         </div>
         <div className="about">
           <h1>About the hospital</h1>
-          <p className="Hdesc">{hospital.about}</p>
+          <p className="Hdesc">{HospitalDetail.about}</p>
         </div>
         <div>
           <h1 style={{ textAlign: "center" }}>Doctors</h1>
 
           <div className="doctor-cards-container">
-            {filteredDoctors.map((doctor, index) => (
-              <DoctorProfile key={index} {...doctor} />
+            {HospitalDetail.doctors && HospitalDetail.doctors.map((doctor, index) => (
+              <DoctorProfile key={index} item={doctor} />
             ))}
           </div>
         </div>
         <div className="services">
           <h2>Services</h2>
           <ul>
-            {hospital.services.map((service, index) => (
+            {HospitalDetail.services && HospitalDetail.services.map((service, index) => (
               <li key={index}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -291,11 +302,22 @@ const HospitalDetail = () => {
         </div>
 
         <h2>News</h2>
-        <p>{hospital.news}</p>
+        <ol>
+        {
+          HospitalDetail.news && HospitalDetail.news.map((news, index) => (
+            <li key={index}>{news}</li>
+            ))
+        }
+        </ol>
         <h2>Events</h2>
-        <p>{hospital.events}</p>
-        <h2>Contact Information</h2>
-        <p>{hospital.contact}</p>
+        <ol>
+        {
+          HospitalDetail.events && HospitalDetail.events.map((event, index) => (
+            <li key={index}>{event}</li>
+            ))
+        }
+        </ol>
+       
       </div>
     </>
   );

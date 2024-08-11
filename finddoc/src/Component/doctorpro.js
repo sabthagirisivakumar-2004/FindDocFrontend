@@ -1,16 +1,28 @@
 import React from "react";
-function DoctorProfile({image,specialty,}) {
+function DoctorProfile({item}) {
   return (
    
       <div
         className="specialty-card"
+        style={{height:"250px"}}
       >
         <div className="card-image">
-          <img src={image} alt={specialty} />
+          <img src={item.img}/>
         </div>
-        <div className="card-content">
-          <h3>{specialty}</h3>
+        <div style={{marginLeft:"10px",marginTop:"5px",fontWeight:"bold"}}>
+       {item.name} <span style={{marginLeft:"38px"}}> <img src={item.status} width={"20px"} height={"20px"}></img></span>
         </div>
+        
+       
+        
+        <div style={{marginLeft:"10px",marginTop:"10px",fontWeight:"lighter"}}>
+        {item.speciality}
+        </div>
+        <div style={{marginLeft:"10px",marginTop:"10px",fontWeight:"lighter"}}>
+        {item.location}
+        </div>
+        
+        
       </div>
   );
 }

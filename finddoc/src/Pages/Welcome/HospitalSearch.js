@@ -1,51 +1,34 @@
-import React, { useState } from "react";
-import HospitalCard from "../../Component/Hospitals";
+import React, { useState, useEffect } from "react";
+import HospitalCard from "../../Component/HospitalSearch";
 import "./HospitalSearch.css";
 import { useNavigate } from "react-router-dom";
 import Nav from "../Welcome/Navbar";
-const datas=[
-    {
-      id: 1,
-      url:"https://graph.org/file/af258f1b89b99e6e20ee2.jpg",
-      name: "PSG Hospital",
-      address: "123 Main St, Cityville",
-      
-    },
-    {
-      id: 2,
-      url:"https://graph.org/file/af258f1b89b99e6e20ee2.jpg",
-      name: "KG Hospital",
-      address: "456 Elm St, Townsville",
-      
-    },
-    {
-      id: 3,
-      url:"https://graph.org/file/af258f1b89b99e6e20ee2.jpg",
-      name: "KMCH Hospital",
-      address: "123 Main St, Cityville",
-      
-    },
-    {
-      id: 4,
-      url:"https://graph.org/file/af258f1b89b99e6e20ee2.jpg",
-      name: "Stanley Hospital",
-      address: "456 Elm St, Townsville",
-      
-    },
-  ];
-
+import axios from "axios";
 const Hospital = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [details,setDetails]=useState([]);
+  useEffect(() => {
+   const fetch =  async () =>{
+     const response= await axios.get("http://localhost:8080/HospitalCardGet");
+     setDetails(response.data);
+     console.log(response.data);
+   }
+   const fetchCardByPost = async () => {
+    const reponse = await axios.get(`http://localhost:8080/hospitalCardSearch/${searchTerm}`);
+    setDetails(reponse.data);
+    console.log(reponse.data); 
+   }
+   if(searchTerm.length == 0){fetch()};
+   if(searchTerm.length > 2){fetchCardByPost()};
+   }, [searchTerm]);
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredHospitals =datas.filter(
-    (hospital) =>
-      hospital.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      hospital.address.toLowerCase().includes(searchTerm.toLowerCase()) 
-  );
+  // const filteredHospitals =details.filter(
+  //   (hospital) =>
+  //     hospital.Hname.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
   const navigate =useNavigate();
 
   return (
@@ -64,7 +47,7 @@ const Hospital = () => {
         <button className="HSbtn" onClick={handleSearchChange}>CLEAR</button>
       </div>
       <div className="hospital-cards-container">
-        {filteredHospitals.map((hospital) => (
+        {details.map((hospital) => (
           <HospitalCard key={hospital.id} item={hospital} />
         ))}
       </div>

@@ -27,10 +27,11 @@ const Navigation = () => {
         <Route path="/Dsearch" element={<Dsearch />}></Route>
         <Route path="/events" element={<Events />}></Route>
         <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/Doctorprofile" element={<Dprofile />}></Route>
+        <Route path="/Doctorprofile/:id" element={<Dprofile />}></Route>
         <Route path="/Special" element={<Special />}></Route>
         <Route path="/special/:id" element={<Dpage />}></Route>
         <Route path="/Hdetails/:id" element={<Hdetails />}></Route>
+       
         <Route path="/Signup"  element={<Signup/>}></Route>
         
       </Routes>

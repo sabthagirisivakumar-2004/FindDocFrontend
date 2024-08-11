@@ -1,9 +1,14 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./Doctor.css";
+import { useNavigate } from "react-router-dom";
 function BasicExample({ item }) {
+  const navigate= useNavigate();
+  const navtoDprofile = () =>{
+    navigate(`/Doctorprofile/${item.id}`)
+  }
   return (
-    <div className="Dcontainer">
+    <div className="Dcontainer" onClick={navtoDprofile()}>
       <Card
         style={{
           width: "18rem",
@@ -20,7 +25,7 @@ function BasicExample({ item }) {
       >
         <Card.Img
           variant="top"
-          src={item.url}
+          src={item.image}
           width={"288px"}
           height={"180px"}
           style={{ borderStartEndRadius:"20px",borderTopLeftRadius:"20px"}}
@@ -30,7 +35,7 @@ function BasicExample({ item }) {
             <h3>{item.name}</h3>
           </Card.Title>
           <Card.Text style={{ paddingLeft: "10px" }}>
-            {item.specialty}
+            {item.speciality}
           </Card.Text>
           <h5 style={{ paddingLeft: "10px" }}>{item.location}</h5>
         </Card.Body>

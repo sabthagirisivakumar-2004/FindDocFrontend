@@ -1,33 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DoctorCard from "../../Component/Doctor";
 import "./DoctorSearch.css";
 import Nav from "../Welcome/Navbar"
-const doctorsData = [
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Sharmila", specialty: "Cardilogists", location: "Coimbatore" },
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Pavithran", specialty: "Neurologists", location: "Madurai" },
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Sharmila", specialty: "Cardilogists", location: "Coimbatore" },
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Pavithran", specialty: "Neurologists", location: "Madurai" },
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Sharmila", specialty: "Cardilogists", location: "Coimbatore" },
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Pavithran", specialty: "Neurologists", location: "Madurai" },
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Sharmila", specialty: "Cardilogists", location: "Coimbatore" },
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Pavithran", specialty: "Neurologists", location: "Madurai" },
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Sharmila", specialty: "Cardilogists", location: "Coimbatore" },
-  { url:"https://graph.org/file/bdc611ecff97eeb973041.jpg",name: "Dr. Pavithran", specialty: "Neurologists", location: "Madurai" },
-];
+import axios from "axios";
+  
 
 const Doctors = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [details,setDetails]=useState([]);
+  useEffect(() => {
+    const fetch = async () =>{
+      const response= await axios.get("http://localhost:8080/doctorCardGet");
+      setDetails(response.data);
+      console.log(response.data);
+    }
+    const fetchPostBySearch = async () =>{
+      const response = await axios.get(`http://localhost:8080/searchDoctors/${searchTerm}`);
+      console.log(response.data);
+      setDetails(response.data);
+    }
+  if (searchTerm.length == 0 ){fetch()};
+    if(searchTerm.length > 2){fetchPostBySearch()};
+  }, [searchTerm])
+  
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredDoctors = doctorsData.filter(
-    (doctor) =>
-      doctor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doctor.specialty.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      doctor.location.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  
 
   return (
     <>
@@ -45,7 +46,7 @@ const Doctors = () => {
         <button className="search-button" onClick={handleSearchChange}>Search</button>
       </div>
       <div className="doctor-cards-container">
-        {filteredDoctors.map((doctor, index) => (
+        {details.map((doctor, index) => (
           <DoctorCard key={index} item={doctor} />
         ))}
       </div>
