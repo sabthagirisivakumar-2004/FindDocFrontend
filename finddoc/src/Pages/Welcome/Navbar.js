@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Profile  from "./Profile";
+import Profile from "./Profile";
 const Navbar = () => {
   const navigate = useNavigate();
   const Hospitals = () => {
@@ -22,89 +22,91 @@ const Navbar = () => {
   };
   return (
     <>
-    <nav className="navbar">
-      <div className="logo">
-        <img
-          src="https://graph.org/file/8998a48e103ccf565ec2b.jpg"
-          alt="Hospital Logo"
-        />
-      </div>
+      <nav className="navbar">
+        <div className="logo">
+          <img
+            src="https://telegra.ph/file/2aefe06d6971b3b64c3f9.jpg"
+            alt="Hospital Logo"
+          />
+        </div>
 
-      <ul className="nav-links">
-        <li>
-          <a
-            href="#home"
-            className="links1"
-            onClick={() => {
-              navigate("/home");
-            }}
-            style={{marginLeft:"90px"}}
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="#hospital"
-            className="links2"
-            onClick={() => {
-              navigate("/Hsearch");
-            }}
-            style={{marginLeft:"105px"}}
-          >
-            Hospital
-          </a>
-        </li>
-        <li>
-          <a
-            href="#doctors"
-            className="links3"
-            onClick={() => {
-              navigate("/Dsearch");
-            }}
-            style={{marginLeft:"125px"}}
-          >
-            Doctors
-          </a>
-        </li>
-        <li>
-          <a
-            href="#Special"
-            className="links4"
-            onClick={() => {
-              navigate("/Special");
-            }}
-            style={{marginLeft:"140px"}}
-          >
-            Specialist
-          </a>
-        </li>
-        <li>
-          <a
-            href="#events"
-            className="links5"
-            onClick={()=>{navigate("/events")}}
-            style={{marginLeft:"160px"}}
-          >
-            Events
-          </a>
-        </li>
-        <li>
-          <a href="#location" className="links6">
-            Location
-          </a>
-        </li>
-        <li>
-        <img
-        src="https://graph.org/file/013ab34a2d54cf6c62955.jpg"
-        style={{ width: 30, height: 30, cursor: 'pointer' }}
-        alt="Profile"
-        onClick={handleProfileClick}
-      />
-        </li>
-      </ul>
-    </nav>
-    <Profile open={isProfileOpen} onClose={handleDrawerClose} /></>
+        <ul className="nav-links">
+          <li>
+            <a
+              className="links1"
+              onClick={() => {
+                navigate("/home");
+              }}
+              style={{ marginLeft: "90px" }}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#hospital"
+              className="links2"
+              onClick={() => {
+                navigate("/Hsearch");
+              }}
+              style={{ marginLeft: "105px" }}
+            >
+              Hospital
+            </a>
+          </li>
+          <li>
+            <a
+              href="#doctors"
+              className="links3"
+              onClick={() => {
+                navigate("/Dsearch");
+              }}
+              style={{ marginLeft: "125px" }}
+            >
+              Doctors
+            </a>
+          </li>
+          <li>
+            <a
+              href="#Special"
+              className="links4"
+              onClick={() => {
+                navigate("/Special");
+              }}
+              style={{ marginLeft: "140px" }}
+            >
+              Specialist
+            </a>
+          </li>
+          <li>
+            <a
+              href="#events"
+              className="links5"
+              onClick={() => {
+                navigate("/events");
+              }}
+              style={{ marginLeft: "160px" }}
+            >
+              Events
+            </a>
+          </li>
+          <li>
+            <a href="#location" className="links6">
+              Location
+            </a>
+          </li>
+          <li>
+            <img
+              src="https://graph.org/file/013ab34a2d54cf6c62955.jpg"
+              style={{ width: 40, height: 40, cursor: "pointer",borderRadius:"30px" }}
+              alt="Profile"
+              onClick={handleProfileClick}
+            />
+          </li>
+        </ul>
+      </nav>
+      <Profile open={isProfileOpen} onClose={handleDrawerClose} />
+    </>
   );
 };
 

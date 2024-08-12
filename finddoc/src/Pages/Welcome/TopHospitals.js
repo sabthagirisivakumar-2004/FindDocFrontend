@@ -4,15 +4,14 @@ import axios from 'axios'
 const TopHospitals = () => {
   const [details,setDetails] = useState([]);
   
+  const fetch = async () => {
+      const response= await axios.get("http://localhost:8080/HospitalCardGet");
+      setDetails(response.data)
+      console.log(response.data);
+  }
   
   useEffect(() => {
-    const fetch = async () => {
-    const response= await axios.get("http://localhost:8080/HospitalCardGet");
-    setDetails(response.data)
-    console.log(response.data);
-    }
-  fetch();
-   
+      fetch();  
   }, [])
   
   return (

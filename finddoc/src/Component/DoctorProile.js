@@ -14,7 +14,6 @@ const Doctorprofile = () => {
     const response= await axios.get(`http://localhost:8080/DoctorDetailById/${id}`);
     console.log(response.data);
     setDdetails(response.data);
-    
     }
   
    fetch();
@@ -31,7 +30,7 @@ const Doctorprofile = () => {
       <p style={{marginLeft:"49px",lineHeight:"35px",fontSize:"21px"}}>
 Dr. Priya Ramanathan is a highly experienced ENT Specialist at PSG Hospital in Coimbatore.<br></br> With over 15 years of expertise in diagnosing and treating a wide range of ear, nose, and throat <br></br>conditions, Dr. Ramanathan is dedicated to providing compassionate and comprehensive care <br></br>to her patients. She specializes in advanced treatments for sinusitis, hearing loss, voice disorders,<br></br> and allergies. Dr. Ramanathan is known for her patient-centered approach, ensuring personalized<br></br> treatment plans and the highest quality of care. At PSG Hospital, she leverages state-of-the-art <br></br>technology and evidence based practices to achieve the best outcomes for her patients.
       </p>
-      <h1><span style={{fontSize:"28px",marginLeft:"49px",marginTop:"80px",color:"grey"}}>🧑‍⚕️{Ddetails.status}</span></h1>
+      <h1><span style={{fontSize:"28px",marginLeft:"49px",marginTop:"80px",color:"grey"}}>🧑‍⚕{Ddetails.status}</span></h1>
       <h1><span style={{fontSize:"28px",position:"absolute",top:"1244px",left:"270px",color:"grey"}}>{Ddetails.fees}</span></h1>
       </div>
       

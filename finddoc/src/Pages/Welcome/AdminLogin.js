@@ -6,7 +6,9 @@ const AdminLogin = ({ setIsAuthenticated }) => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "" });
   const navigate = useNavigate();
-
+const Admin = () =>{
+  navigate("/Dashboard");
+}
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -75,7 +77,7 @@ const AdminLogin = ({ setIsAuthenticated }) => {
             </label>
             {errors.password && <p className="form-error">{errors.password}</p>}
           </div>
-          <button type="submit" className="form-button">
+          <button type="submit" className="form-button" onClick={Admin}>
             Login
           </button>
         </form>

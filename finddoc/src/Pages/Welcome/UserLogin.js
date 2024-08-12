@@ -91,9 +91,10 @@ const UserAuth = ({ setIsAuthenticated }) => {
   
 
   return (
-    <div className="container" style={{ width: "1519px" }}>
+    <div className="container" style={{ width: "1530px",}}>
       <div className="image-section"></div>
-      <div className="form-section">
+      <div className="form-section" style={{marginRight:"950px",borderRadius:"40px", backgroundColor: "rgba(255, 255, 255, 0.058)",width:"400px",
+        transform: "scale(1.05)"}}>
         <form className="form-container" onSubmit={handleSubmit}>
           <h1 style={{ textAlign: "center" }}>
             {isRegister ? "Register" : "Login"}
@@ -142,10 +143,10 @@ const UserAuth = ({ setIsAuthenticated }) => {
             </label>
             {errors.password && <p className="form-error">{errors.password}</p>}
           </div>
-          <button type="submit" className="form-button">
+          <button type="submit" className="form-button" style={{backgroundColor:"rgb(148, 51, 238)"}}>
             {isRegister ? "Register" : "Login"}
           </button>
-          <button type="button" onClick={toggleMode} className="toggle-button">
+          <button type="button" onClick={toggleMode} className="toggle-button" style={{backgroundColor:"black"}}>
             {isRegister
               ? "Already have an account? Login"
               : "Don't have an account? Register"}
