@@ -280,7 +280,7 @@ fetch();
             ))}
           </div>
         </div>
-        <div className="services">
+        <div className="services" style={{marginTop:"40px"}}>
           <h2>Services</h2>
           <ul>
             {HospitalDetail.services && HospitalDetail.services.map((service, index) => (

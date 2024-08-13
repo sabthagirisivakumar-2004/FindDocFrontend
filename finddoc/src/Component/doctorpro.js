@@ -4,7 +4,7 @@ function DoctorProfile({item}) {
    
       <div
         className="specialty-card"
-        style={{height:"250px"}}
+        style={{height:"250px",marginTop:"-20px",marginLeft:"50px"}}
       >
         <div className="card-image">
           <img src={item.img}/>

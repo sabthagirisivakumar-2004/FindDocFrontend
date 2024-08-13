@@ -16,10 +16,12 @@ import Hdetails from "../Pages/Welcome/HospitalDetails";
 import Signup from "../Pages/Welcome/UserSignup";
 import Ddetails from "../Component/DoctorProile";
 import Dashboard from "../Pages/Admin/Dashboard";
+import SDoctors from "../Pages/Welcome/SpecialistDoctors"
 const Navigation = () => {
   return (
     <BrowserRouter>
       <Routes>
+      <Route path="/SpecialDoctors/:specialty" element={<SDoctors/>}></Route>
         <Route index path="/home" element={<Home />}></Route>
         <Route path="/Welcome" element={<Welcome />}></Route>
         <Route path="/Admin-login" element={<Admin />}></Route>

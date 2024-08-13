@@ -40,9 +40,11 @@ body {
     left:1360px;
     top:26px;
   }
-  .logo img {
-    width: 50px;
+  .Llogo img {
+    width: 60px;
     height: auto;
+    
+    border-radius: 70px;
   }
   
   .nav-links {

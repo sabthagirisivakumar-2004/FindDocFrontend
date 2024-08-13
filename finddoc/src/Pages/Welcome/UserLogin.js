@@ -92,6 +92,7 @@ const UserAuth = ({ setIsAuthenticated }) => {
 
   return (
     <div className="container" style={{ width: "1530px",}}>
+    <img src="https://plus.unsplash.com/premium_photo-1673958772259-009b3e16b99a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{position:"absolute",height:"676px",left:"515px",top:"9px",width:"1020px",borderTopLeftRadius:"20px"}}></img>
       <div className="image-section"></div>
       <div className="form-section" style={{marginRight:"950px",borderRadius:"40px", backgroundColor: "rgba(255, 255, 255, 0.058)",width:"400px",
         transform: "scale(1.05)"}}>
