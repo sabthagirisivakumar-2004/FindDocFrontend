@@ -13,17 +13,17 @@ const Profile = ({ open, onClose }) => {
       >
         <div className="profile-info">
           <div className="profile-pic">
-            <img src="" alt="Profile" />
+            <img src="https://graph.org/file/013ab34a2d54cf6c62955.jpg" alt="Profile" />
           </div>
           <div className="details">
             <h2>Darlene Gibbs (34/F)</h2>
-            <p>Email: darlene_gibbs@gmail.com</p>
-            <p>Phone: (219) 555-0114</p>
-            <p>Job Type: Private</p>
-            <p>Age: 34</p>
-            <p>Address: 6391 Elgin St. Celina, Delaware 10299</p>
-            <p>Birthday: 1984-07-09</p>
-            <button className="edit-button">Edit Profile</button>
+            <p >Email: darlene_gibbs@gmail.com</p>
+            <p style={{marginRight:"75px"}}>Phone: (219) 555-0114</p>
+            <p style={{marginRight:"115px"}}>Job Type: Private</p>
+            <p style={{marginRight:"105px"}}>Age: 34</p>
+            <p style={{marginRight:"5px"}}>Address: 6391 Elgin St. Celina</p>
+            <p style={{marginRight:"70px"}} >Birthday: 1984-07-09</p>
+            <button className="edit-button" style={{backgroundColor:"rgb(148, 51, 238)",marginRight:"20px"}}>Edit Profile</button>
           </div>
         </div>
       </div>

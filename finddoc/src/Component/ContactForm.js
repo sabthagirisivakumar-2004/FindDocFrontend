@@ -18,6 +18,7 @@ const ContactForm = ({ name }) => {
     setFormData({
       ...formData,
       [name]: value,
+      
     });
   };
 

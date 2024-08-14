@@ -27,6 +27,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    margin-left: 15px;
   }
   
   .services {
@@ -229,6 +230,68 @@
   .phone-link:hover svg {
     fill: #22cf81;
   }
+  /* News and Events */
+.news-events-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 70px;
+  background-color: black;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 300px;
+}
+
+.news,
+.events {
+  flex: 1;
+  background: #f9f9f9;
+  opacity: 0.5px;
+  padding: 20px;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+height: 170px;
+margin-top: 45px;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.24);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(19.9px);
+-webkit-backdrop-filter: blur(19.9px);
+border: 1px solid rgba(255, 255, 255, 0.59);
+}
+
+.news h2,
+.events h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.news ul,
+.events ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.news ul li,
+.events ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.news ul li:last-child,
+.events ul li:last-child {
+  border-bottom: none;
+}
+
+.news ul li:before,
+.events ul li:before {
+  content: "•";
+  color: #d000ff;
+  margin-right: 10px;
+}
   
   .about {
     display: block;

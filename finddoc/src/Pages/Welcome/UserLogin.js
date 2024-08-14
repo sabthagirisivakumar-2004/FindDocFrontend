@@ -67,7 +67,7 @@ const UserAuth = ({ setIsAuthenticated }) => {
       });
   
       if (response.status === 200) {
-        alert("Login successful");
+       
         navigate("/home");
        
         

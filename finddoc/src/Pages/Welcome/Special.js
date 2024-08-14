@@ -26,9 +26,8 @@ const specialties = [
     {
       id: 5,
       name: "Dermatology",
-      image: "https://graph.org/file/31c4fab9194c4ec8369aa.jpg",
-    },
-  
+      image: "https://img.freepik.com/free-photo/closeup-portrait-beautiful-woman-during-cosmetology-therapy-beauty-salon-professional-dermatology-procedures-lifting-rejuvenation-modern-devices-healthcare_197531-2785.jpg" 
+      },
     {
       id: 6,
       name: "Pediatrics",

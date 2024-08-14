@@ -280,7 +280,7 @@ fetch();
             ))}
           </div>
         </div>
-        <div className="services" style={{marginTop:"40px"}}>
+        <div className="services" style={{marginTop:"50px"}}>
           <h2>Services</h2>
           <ul>
             {HospitalDetail.services && HospitalDetail.services.map((service, index) => (
@@ -301,22 +301,24 @@ fetch();
           </ul>
         </div>
 
-        <h2>News</h2>
-        <ol>
-        {
-          HospitalDetail.news && HospitalDetail.news.map((news, index) => (
-            <li key={index}>{news}</li>
-            ))
-        }
-        </ol>
-        <h2>Events</h2>
-        <ol>
-        {
-          HospitalDetail.events && HospitalDetail.events.map((event, index) => (
-            <li key={index}>{event}</li>
-            ))
-        }
-        </ol>
+        <div className="news-events-container">
+          <div className="news">
+            <h2>News</h2>
+            <ul>
+              {HospitalDetail.news && HospitalDetail.news.map((newsItem, index) => (
+                <li key={index}>{newsItem}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="events">
+            <h2>Events</h2>
+            <ul>
+              {HospitalDetail.events && HospitalDetail.events.map((eventItem, index) => (
+                <li key={index}>{eventItem}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
        
       </div>
     </>
