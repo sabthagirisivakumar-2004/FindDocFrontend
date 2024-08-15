@@ -2,22 +2,17 @@ import React from 'react';
 import './SpecialistCard.css';
 import { Link } from "react-router-dom";
 
-const SpecialistCard = ({ id, specialty, image, onClick }) => {
+const SpecialistCard = ({ item }) => {
   return (
-    <Link to={`/SpecialDoctors/${specialty}`} className="specialty-card-link" style={{textDecoration: "none", marginTop:"20px"}}>
+    <Link to={`/SpecialDoctors/${item.speciality}`} className="specialty-card-link" style={{textDecoration: "none", marginTop:"20px"}}>
       <div 
         className="specialty-card" 
-        onClick={() => {
-          if (onClick) {
-            onClick(specialty);
-          }
-        }}
       >
         <div className="card-image">
-          <img src={image} alt={specialty} />
+          <img src={item.simg} />
         </div>
         <div className="card-content" >
-          <h3>{specialty}</h3>
+          <h3>{item.speciality}</h3>
         </div>
       </div>
     </Link>

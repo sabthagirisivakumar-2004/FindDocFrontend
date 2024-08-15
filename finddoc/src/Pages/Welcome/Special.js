@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from "../Welcome/Navbar";
 import "./Special.css"
 import SpecialistCard from '../../Component/SpecialistCard';
+import axios from 'axios';
 const specialties = [
     {
       id: 1,
@@ -56,16 +57,26 @@ const specialties = [
     // Add more specialties as needed
   ];
 const Special = () => {
+  const [datas,setdatas]=useState([]);
+  useEffect(() => {
+    const fetch = async () =>{
+      const response = await axios.get("http://localhost:8080/specialityCardGet");
+      console.log(response.data);
+      setdatas(response.data);
+    }
+  fetch();
+    
+  }, [])
+  
   return (
     <>
     <Nav/>
     <div className="specialist-page">
     <div className="specialty-cards">
-      {specialties.map((specialty) => (
+    
+      {datas && datas.map((specialty) => (
         <SpecialistCard
-          key={specialty.name}
-          specialty={specialty.name}
-          image={specialty.image}
+          item={specialty}
         />
       ))}
     </div>

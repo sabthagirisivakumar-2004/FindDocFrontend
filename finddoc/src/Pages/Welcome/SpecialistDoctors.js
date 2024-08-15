@@ -7,7 +7,7 @@ const Doctors = () => {
    const {specialty} =useParams();
    useEffect(() => {
      const fetch = async () =>{
-      const reponse = await axios.get("http://localhost:8080/doctorCardGet");
+      const reponse = await axios.get("http://localhost:8080/GetAllSpecialityDoctor");
       setdetails(reponse.data);
       console.log(reponse.data);
      }
