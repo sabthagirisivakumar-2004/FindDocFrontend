@@ -7,9 +7,9 @@ const Navbar = () => {
  
   return (
     <nav className="navbar">
-      <div className="logo" >
+      <div className="Llogo" >
         <img
-          src="https://graph.org/file/8998a48e103ccf565ec2b.jpg"
+          src="https://telegra.ph/file/2aefe06d6971b3b64c3f9.jpg"
           alt="Hospital Logo"
           
         />

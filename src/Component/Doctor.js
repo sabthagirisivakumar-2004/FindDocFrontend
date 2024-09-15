@@ -4,11 +4,11 @@ import "./Doctor.css";
 import { useNavigate } from "react-router-dom";
 function BasicExample({ item }) {
   const navigate= useNavigate();
-  const navtoDprofile = () =>{
-    navigate(`/Doctorprofile/${item.id}`)
-  }
+ const navtoDdetails = () =>{
+  navigate(`/Ddetails/${item.id}`);
+ }
   return (
-    <div className="Dcontainer" onClick={navtoDprofile()}>
+    <div className="Dcontainer" onClick={navtoDdetails}>
       <Card
         style={{
           width: "18rem",

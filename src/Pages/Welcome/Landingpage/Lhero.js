@@ -12,7 +12,7 @@ const Lhero = () => {
       <p style={{color:"black",lineHeight:"35px"}}>
       Join thousands of satisfied users who have found the right doctors through our platform.<br></br> Start your journey to better health today by searching for the best healthcare professionals<br></br> in your area. Contact us for more information or to get started.
       </p>
-      <button className='Lbtn' onClick={()=>{navigate("/Welcome")}}>Explore</button>
+      <button className='Lbtn' onClick={()=>{navigate("/User-login")}}>Explore</button>
     </div>
     </div>
   )

@@ -41,8 +41,9 @@ body {
   top:26px;
 }
 .logo img {
-  width: 50px;
+  width: 60px;
   height: auto;
+  border-radius: 30px;
 }
 
 .nav-links {

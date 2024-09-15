@@ -61,6 +61,7 @@ const SpecialistPage = () => {
   return (
     <>
      <NavBar/>
+     
     <div className="specialist-page">
       <div className="specialty-cards" >
         {specialties.map((specialty) => (

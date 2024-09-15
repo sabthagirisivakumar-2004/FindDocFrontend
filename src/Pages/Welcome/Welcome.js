@@ -17,13 +17,18 @@ const DefaultAuth = () => {
     <div className="container" style={{width:"1519px"}}>
       <h1>Welcome</h1>
       <br></br>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"25px"}}>
       <div>
-      <button onClick={handleAdminLogin} className="button">
+      
+      <button onClick={handleAdminLogin} className="button" style={{marginRight:"10px",backgroundColor:"rgb(148, 51, 238)"}}>
         Admin Login
       </button>
-      <button onClick={handleUserLogin} className="button">
+      </div>
+      <div>
+      <button onClick={handleUserLogin} className="button" style={{marginRight:"10px",backgroundColor:"rgb(148, 51, 238)"}}>
         User Login / Register
       </button>
+      </div>
       </div>
     </div>
   );
